@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Repós Cosméticos — A marca queridinha do Brasil</title>
+<meta name="description" content="Protótipo de e-commerce Repós Cosméticos com experiência personalizada para Pessoa Física e Pessoa Jurídica.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="pf">
+
+<!-- Barra de avisos: muda conforme o perfil -->
+<div class="bar" role="region" aria-label="Avisos">
+  <div class="wrap" data-only="pf">
+    <span><svg class="ic" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h11v10H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg><b>Frete grátis</b> acima de R$ 199</span>
+    <span>Até <b>3x sem juros</b> no cartão</span>
+    <span><b>5% off</b> no Pix</span>
+  </div>
+  <div class="wrap" data-only="pj">
+    <span><svg class="ic" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V5l8-3v19M12 9h8v12M2 21h20"/></svg><b>Preço de fábrica</b> para CNPJ</span>
+    <span>Pedido mínimo <b>R$ 300</b></span>
+    <span>Boleto faturado em <b>28 dias</b></span>
+    <span>Descontos de até <b>14%</b> por volume</span>
+  </div>
+</div>
+
+<header class="hdr">
+  <div class="wrap hdr-main">
+    <button class="ibtn menu-btn" data-open="menu" aria-label="Abrir menu"><svg class="ic" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    <a class="logo" href="#/" aria-label="Repós Cosméticos — início"><img src="assets/img/logo-dark.png" alt="Repós Cosméticos" width="88" height="46"></a>
+    <form class="search" role="search" id="searchForm">
+      <label class="sr" for="q">Buscar produtos</label>
+      <input id="q" type="search" placeholder="Buscar amaciante, esmalte, cera roll-on…" autocomplete="off">
+      <button type="submit" aria-label="Buscar"><svg class="ic" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></button>
+    </form>
+    <div class="who" role="group" aria-label="Perfil de compra">
+      <span class="thumb" aria-hidden="true"></span>
+      <button data-set="pf" aria-label="Comprar como Pessoa Física"><em>PF</em>Para mim</button>
+      <button data-set="pj" aria-label="Comprar como Pessoa Jurídica"><em>PJ</em>Para meu negócio</button>
+    </div>
+    <div class="icons">
+      <button class="ibtn hide-m" data-toast="account" aria-label="Minha conta"><svg class="ic" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg></button>
+      <button class="ibtn hide-m" data-toast="favs" aria-label="Favoritos"><svg class="ic" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10Z"/></svg></button>
+      <button class="ibtn" data-open="cart" aria-label="Abrir sacola"><svg class="ic" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M5 8h14l-1 13H6L5 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg><span class="count" id="cartCount">0</span></button>
+    </div>
+  </div>
+  <nav class="nav" aria-label="Categorias">
+    <div class="wrap" id="navLinks"></div>
+  </nav>
+</header>
+
+<main id="app" tabindex="-1"></main>
+
+<footer class="ftr">
+  <div class="wrap">
+    <div class="ftr-in">
+      <div>
+        <a class="logo" href="#/"><img src="assets/img/logo-white.png" alt="Repós Cosméticos" width="100" height="52"></a>
+        <p>Desde 2004 desenvolvendo e fabricando cosméticos para manicures, esteticistas e para quem ama se cuidar. A marca queridinha do Brasil.</p>
+        <div class="social">
+          <a href="#" data-toast="social" aria-label="Instagram"><svg class="ic" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"/></svg></a>
+          <a href="#" data-toast="social" aria-label="Facebook"><svg class="ic" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M15 3h-2a4 4 0 0 0-4 4v3H7v4h2v7h4v-7h3l1-4h-4V7a1 1 0 0 1 1-1h2Z"/></svg></a>
+          <a href="#" data-toast="social" aria-label="YouTube"><svg class="ic" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><rect x="2.5" y="5.5" width="19" height="13" rx="4"/><path d="m10 9 5 3-5 3Z"/></svg></a>
+          <a href="#" data-toast="whats" aria-label="WhatsApp"><svg class="ic" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 19z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h4>Institucional</h4>
+        <ul>
+          <li><a href="#" data-toast="page">Sobre a Repós</a></li>
+          <li><a href="#" data-toast="page">Onde encontrar</a></li>
+          <li><a href="#" data-set="pj">Quero revender</a></li>
+          <li><a href="#" data-toast="page">Instrutoras Repós</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Ajuda</h4>
+        <ul>
+          <li><a href="#" data-toast="page">Trocas e devoluções</a></li>
+          <li><a href="#" data-toast="page">Prazos de entrega</a></li>
+          <li><a href="#" data-toast="page">Formas de pagamento</a></li>
+          <li><a href="#" data-toast="page">Política de privacidade</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Fale conosco</h4>
+        <ul>
+          <li>sac@reposcosmeticos.com.br</li>
+          <li>(51) 99723-0513</li>
+          <li>Rua São Borja, 430<br>Ivoti · RS</li>
+        </ul>
+      </div>
+    </div>
+    <div class="ftr-bottom">
+      <span>© 2026 Repós Cosméticos · Todos os direitos reservados</span>
+      <div class="pays" aria-label="Formas de pagamento"><span>PIX</span><span>VISA</span><span>MASTER</span><span>ELO</span><span>BOLETO</span></div>
+    </div>
+  </div>
+</footer>
+
+<div class="scrim" data-close></div>
+
+<!-- Sacola -->
+<aside class="drawer" id="cart" aria-label="Sacola de compras" aria-hidden="true">
+  <div class="dr-hd">
+    <h2><span data-only="pf">Sua sacola</span><span data-only="pj">Seu pedido</span> <small id="cartItemsLbl"></small></h2>
+    <button class="ibtn" data-close aria-label="Fechar"><svg class="ic" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+  </div>
+  <div class="dr-body" id="cartBody"></div>
+  <div class="dr-ft" id="cartFoot"></div>
+</aside>
+
+<!-- Menu mobile -->
+<aside class="drawer left" id="menu" aria-label="Menu" aria-hidden="true">
+  <div class="dr-hd">
+    <img src="assets/img/logo-dark.png" alt="Repós Cosméticos" style="height:34px;width:auto">
+    <button class="ibtn" data-close aria-label="Fechar"><svg class="ic" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+  </div>
+  <div class="dr-body"><nav class="menu-links" id="menuLinks"></nav></div>
+</aside>
+
+<!-- Pop-up de perfil PF / PJ -->
+<div class="gate" id="gate" role="dialog" aria-modal="true" aria-labelledby="gateTitle">
+  <div class="gate-card">
+    <button class="gate-x" data-gate-close aria-label="Fechar e continuar como Pessoa Física"><svg class="ic" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    <div class="gate-media">
+      <img class="bg" src="assets/img/kit-spa.jpg" alt="Linha Protocolo SPA dos Pés Repós">
+      <div class="cap">
+        <img src="assets/img/logo-white.png" alt="Repós Cosméticos">
+        <p>Desde 2004, a marca queridinha das manicures e de quem ama se cuidar.</p>
+      </div>
+    </div>
+    <div class="gate-body">
+      <span class="flag">Bem-vinda à <b>Repós</b></span>
+      <h2 id="gateTitle">Como você vai comprar hoje?</h2>
+      <p>Vamos mostrar os preços, as condições e as recomendações certas para o seu perfil.</p>
+      <div class="choices">
+        <button class="choice" data-choose="pf">
+          <span class="ci-ic"><svg class="ic" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg></span>
+          <span>
+            <b>Pessoa Física</b>
+            <span class="d">Quero cuidar de mim, em casa</span>
+            <ul><li>Preços de varejo</li><li>Kits para presentear</li><li>3x sem juros</li></ul>
+          </span>
+          <span class="go"><svg class="ic" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg></span>
+        </button>
+        <div>
+          <button class="choice" data-choose="pj">
+            <span class="ci-ic"><svg class="ic" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V5l8-3v19M12 9h8v12M8 8h.01M8 12h.01M8 16h.01M16 13h.01M16 17h.01M2 21h20"/></svg></span>
+            <span>
+              <b>Pessoa Jurídica</b>
+              <span class="d">Compro para meu salão, studio ou revenda</span>
+              <ul><li>Preço de fábrica</li><li>Desconto por volume</li><li>Boleto 28 dias</li></ul>
+            </span>
+            <span class="go"><svg class="ic" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg></span>
+          </button>
+          <div class="cnpj" id="cnpjBox">
+            <div>
+              <form class="inner" id="cnpjForm" novalidate>
+                <label for="cnpjInput">Informe o CNPJ para liberar os preços profissionais</label>
+                <div class="row">
+                  <input id="cnpjInput" inputmode="numeric" autocomplete="off" placeholder="00.000.000/0000-00" maxlength="18">
+                  <button class="btn btn-lime" type="submit">Ver preços</button>
+                </div>
+                <div class="msg" id="cnpjMsg" aria-live="polite"></div>
+                <button type="button" class="later" data-pj-later>Informar depois e continuar como PJ</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="gate-foot"><svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h12l-3-3M17 17H5l3 3"/></svg>Você pode trocar de perfil quando quiser, no topo do site.</div>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,5 @@
+# imagens originais (as otimizadas ficam em assets/img)
+assets/src/
+assets/web/
+# configuração local do Claude
+.claude/
